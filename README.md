@@ -18,4 +18,9 @@ Murray, Scott. 2017. Interactive Data Visualization for the Web: An Introduction
 Code available from Scott Murray's GitHub repository at   https://github.com/alignedleft/d3-book 
 
 ## Objective
-The goal of the D3 visualization is to provide an interactive visualization for the client, showing the percentage of total assets assigned across five security classes: cash (money markets), real estate, bonds, stocks selected by Smart Robo Investments, and stocks selected by the individual investor.  A bar chart is used to manage the percentages in unit increments with the total percentage across asset classes being 100.
+The goal of the D3 visualization is to provide an interactive visualization for the client, showing the percentage of total assets assigned across five security classes: cash (money markets), real estate, bonds, stocks selected by Smart Robo Investments, and stocks selected by the individual investor.  A bar chart is used to manage the percentages in unit increments with the total percentage across asset classes being 100.
+
+## Initializing the App
+Working under the robo-d3-work directory, we initialize and start the app with
+
+npm install
