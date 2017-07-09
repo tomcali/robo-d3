@@ -1,10 +1,7 @@
 import React, { Component } from 'react'
 import './App.css'
-// import WorldMap from './WorldMap'
 import BarChart from './BarChart'
-// import StreamGraph from './StreamGraph'
 import Brush from './Brush'
-import StatLine from './StatLine'
 import worlddata from './world'
 import { range } from 'd3-array'
 import { scaleThreshold } from 'd3-scale'
@@ -55,14 +52,12 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <h2>d3ia dashboard</h2>
+          <h2>Smart Robo Investments</h2>
         </div>
         <div>
-        <StatLine allData={appdata} filteredData={filteredAppdata} />
-        {/*<StreamGraph hoverElement={this.state.hover} onHover={this.onHover} colorScale={colorScale} data={filteredAppdata} size={[this.state.screenWidth, this.state.screenHeight / 2]} />*/}
-        {/*<Brush changeBrush={this.onBrush} size={[this.state.screenWidth, 50]} />*/}
-        {/*<WorldMap hoverElement={this.state.hover} onHover={this.onHover} colorScale={colorScale} data={filteredAppdata} size={[this.state.screenWidth / 2, this.state.screenHeight / 2]} />*/}
-        <BarChart hoverElement={this.state.hover} onHover={this.onHover} colorScale={colorScale} data={filteredAppdata} size={[this.state.screenWidth / 2, this.state.screenHeight / 2]} />
+
+        <BarChart hoverElement={this.state.hover} onHover={this.onHover} colorScale={colorScale}
+                  data={filteredAppdata} size={[this.state.screenWidth / 2, this.state.screenHeight / 2]} />
         </div>
       </div>
     )

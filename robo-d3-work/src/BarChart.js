@@ -27,7 +27,7 @@ class BarChart extends Component {
 
     const legend = legendColor()
       .scale(this.props.colorScale)
-      .labels(["Wave 1", "Wave 2", "Wave 3", "Wave 4"])
+      .labels(["REIT", "Bonds", "Stocks", "Cash"])
 
     select(node)
       .selectAll("g.legend")
@@ -65,7 +65,7 @@ class BarChart extends Component {
         .attr("x", (d,i) => i * barWidth)
         .attr("y", d => this.props.size[1] - yScale(sum(d.data)))
         .attr("height", d => yScale(sum(d.data)))
-        .attr("width", barWidth)
+        .attr("width", 0.8 * barWidth)  // multiplier to provide space between bars
         .style("fill", (d,i) => this.props.hoverElement === d.id ? "#FCBC34" : this.props.colorScale(d.launchday))
         .style("stroke", "black")
         .style("stroke-opacity", 0.25)
