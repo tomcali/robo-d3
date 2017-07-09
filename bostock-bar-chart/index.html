@@ -22,15 +22,16 @@
     <script src="assets/d3/d3.min.js"></script>
     <link rel="stylesheet" href="assets/d3/css/d3-bar-chart.css">
     <script src="assets/d3/d3-bar-chart.js"></script>
+    <script src="robo-button-action.js"></script>
 </head>
 
-<body>
+<body onload="initElement();">
     <div class="row">
         <div class="col-md-12">
             <div class="jumbotron">
                 <h1>Smart Robo Investments</h1>
-                <p>Flexible asset allocation tailored to your individual investment objectives and guided by market data.</p>
-                <p><a class="btn btn-default" role="button" href="#">Learn more</a></p>
+                <p>Flexible asset allocation tailored to your individual investment objective and guided by market data.</p>
+                <p><a class="btn btn-default" role="button" href="#">Set Your Investment Objective</a></p>
             </div>
         </div>
     </div>
@@ -52,16 +53,16 @@
         <div class="col-md-1"></div>
         <div class="col-md-2"></div>
         <div class="col-md-2">
-            <button class="btn btn-default" type="button">REIT +</button>
+            <button id = "reitPlus" class="btn btn-default" type="button">REIT +</button>
         </div>
         <div class="col-md-2">
-            <button class="btn btn-default" type="button">Bonds + </button>
+            <button id = "bondsPlus" class="btn btn-default" type="button">Bonds + </button>
         </div>
         <div class="col-md-2">
-            <button class="btn btn-default" type="button">Smart Fund + </button>
+            <button id = "fundPlus" class="btn btn-default" type="button">Smart Fund + </button>
         </div>
         <div class="col-md-2">
-            <button class="btn btn-default" type="button">My Stocks + </button>
+            <button id = "selfPlus" class="btn btn-default" type="button">My Stocks + </button>
         </div>
         <div class="col-md-1"></div>
     </div>
@@ -69,16 +70,16 @@
         <div class="col-md-1"></div>
         <div class="col-md-2"></div>
         <div class="col-md-2">
-            <button class="btn btn-default" type="button">REIT - </button>
+            <button id = "reitMinus" class="btn btn-default" type="button">REIT - </button>
         </div>
         <div class="col-md-2">
-            <button class="btn btn-default" type="button">Bonds - </button>
+            <button id = "bondsMinus" class="btn btn-default" type="button">Bonds - </button>
         </div>
         <div class="col-md-2">
-            <button class="btn btn-default" type="button">Smart Fund - </button>
+            <button id = "fundMinus" class="btn btn-default" type="button">Smart Fund - </button>
         </div>
         <div class="col-md-2">
-            <button class="btn btn-default" type="button">My Stocks - </button>
+            <button id = "selfMinus" class="btn btn-default" type="button">My Stocks - </button>
         </div>
         <div class="col-md-1"></div>
     </div>

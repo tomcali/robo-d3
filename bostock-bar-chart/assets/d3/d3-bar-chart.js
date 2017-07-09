@@ -22,17 +22,18 @@ var svg = d3.select("#barchart").append("svg")
     .attr("transform", 
           "translate(" + margin.left + "," + margin.top + ")");
 
+// initial settings of data values for capital preservation objective
 var data = [
-  {salesperson: "Cash", sales: 5},
-  {salesperson: "Real Estate Investment Trust (REIT)", sales: 10},
-  {salesperson: "Bonds", sales: 10},
-  {salesperson: "Smart Fund (Stocks Selected by Smart Robo Investments)", sales: 65},
-  {salesperson: "My Stocks (Personal Selections)", sales: 10}
+  {asset: "Cash", amount: 30},
+  {asset: "REIT (Real Estate Investment Trust)", amount: 5},
+  {asset: "Bonds", amount: 15},
+  {asset: "Smart Fund (Smart Robo Investments)", amount: 40},
+  {asset: "My Stocks (Personal Selections)", amount: 10}
 ];
 
   // Scale the range of the data in the domains
-  x.domain(data.map(function(d) { return d.salesperson; }));
-  y.domain([0, d3.max(data, function(d) { return d.sales; })]);
+  x.domain(data.map(function(d) { return d.asset; }));
+  y.domain([0, d3.max(data, function(d) { return d.amount; })]);
   
   svg.append("text")
       .attr("class", "title")
@@ -46,10 +47,10 @@ var data = [
       .data(data)
     .enter().append("rect")
       .attr("class", "bar")
-      .attr("x", function(d) { return x(d.salesperson); })
+      .attr("x", function(d) { return x(d.asset); })
       .attr("width", x.bandwidth())
-      .attr("y", function(d) { return y(d.sales); })
-      .attr("height", function(d) { return height - y(d.sales); });
+      .attr("y", function(d) { return y(d.amount); })
+      .attr("height", function(d) { return height - y(d.amount); });
 
   // add the x Axis
   svg.append("g")
@@ -85,13 +86,6 @@ function wrap(text, width) {
     }
   });
 }
-
-function type(d) {
-  d.sales = +d.sales;
-  return d;
-}
-
-
 
 }); // end document ready function
 

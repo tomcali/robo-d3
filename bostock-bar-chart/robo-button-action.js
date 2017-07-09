@@ -1,47 +1,8 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>robo-try-1</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-</head>
-
-<body onload="initElement();">
-    <div class="btn-toolbar">
-        <div class="btn-group" role="group"></div>
-    </div>
-    <div class="btn-toolbar">
-        <div class="btn-group" role="group"></div>
-        <div class="btn-group" role="group"></div>
-    </div>
-    <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-4">
-            <button id = "reitPlus" class="btn btn-default btn-lg" type="button"> + </button>
-            <button id = "bondsPlus" class="btn btn-default btn-lg" type="button"> + </button>
-            <button id = "fundPlus" class="btn btn-default btn-lg" type="button"> + </button>
-            <button id = "selfPlus" class="btn btn-default btn-lg" type="button"> + </button>
-        </div>
-        <div class="col-md-4"></div>
-    </div>
-    <div class="btn-group" role="group"></div>
-    <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-4">
-            <button id = "reitMinus" class="btn btn-default btn-lg" type="button"> - </button>
-            <button id = "bondsMinus" class="btn btn-default btn-lg" type="button"> - </button>
-            <button id = "fundMinus" class="btn btn-default btn-lg" type="button"> - </button>
-            <button id = "selfMinus" class="btn btn-default btn-lg" type="button"> - </button>
-        </div>
-        <div class="col-md-4"></div>
-    </div>
-    
-    <script>
+// button action code for smart robo investments
       function initElement() {
+      
         // boolean switch for logging to console for debugging button actions
-        var reportStatus = false;
+        var reportStatus = true;
         
         // set hard limits for min and max of each class of assets
         // these will vary with the type of investor
@@ -163,18 +124,6 @@
 
 };
 
-    </script>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-</body>
 
-</html>
+    
+  
