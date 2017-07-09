@@ -219,7 +219,17 @@ d3.selectAll("body").select("#bondsPlus")
                 bondsValue ++;
                 cashValue--; 
             };               
-            if (reportStatus) listValues();    
+            if (reportStatus) listValues();  
+                    data = [
+  {asset: "Cash", amount: cashValue},
+  {asset: "REIT (Real Estate Investment Trust)", amount: reitValue},
+  {asset: "Bonds", amount: bondsValue},
+  {asset: "Smart Fund (Smart Robo Investments)", amount: fundValue},
+  {asset: "My Stocks (Personal Selections)", amount: selfValue}
+];
+
+if (reportStatus) console.log(data);  
+makefigure();       
 });
 
 d3.selectAll("body").select("#fundPlus")
@@ -230,6 +240,16 @@ d3.selectAll("body").select("#fundPlus")
                 cashValue--; 
             };               
             if (reportStatus) listValues();    
+                    data = [
+  {asset: "Cash", amount: cashValue},
+  {asset: "REIT (Real Estate Investment Trust)", amount: reitValue},
+  {asset: "Bonds", amount: bondsValue},
+  {asset: "Smart Fund (Smart Robo Investments)", amount: fundValue},
+  {asset: "My Stocks (Personal Selections)", amount: selfValue}
+];
+
+if (reportStatus) console.log(data);  
+makefigure();     
 });
 
 
@@ -240,7 +260,17 @@ d3.selectAll("body").select("#selfPlus")
                 selfValue ++;
                 cashValue--; 
             };               
-            if (reportStatus) listValues();    
+            if (reportStatus) listValues();  
+                    data = [
+  {asset: "Cash", amount: cashValue},
+  {asset: "REIT (Real Estate Investment Trust)", amount: reitValue},
+  {asset: "Bonds", amount: bondsValue},
+  {asset: "Smart Fund (Smart Robo Investments)", amount: fundValue},
+  {asset: "My Stocks (Personal Selections)", amount: selfValue}
+];
+
+if (reportStatus) console.log(data);  
+makefigure();       
 });
 
 
@@ -251,7 +281,17 @@ d3.selectAll("body").select("#reitMinus")
                 cashValue ++;
                 reitValue--; 
             };               
-            if (reportStatus) listValues();    
+            if (reportStatus) listValues();   
+                    data = [
+  {asset: "Cash", amount: cashValue},
+  {asset: "REIT (Real Estate Investment Trust)", amount: reitValue},
+  {asset: "Bonds", amount: bondsValue},
+  {asset: "Smart Fund (Smart Robo Investments)", amount: fundValue},
+  {asset: "My Stocks (Personal Selections)", amount: selfValue}
+];
+
+if (reportStatus) console.log(data);  
+makefigure();      
 });
 
 
@@ -263,7 +303,17 @@ d3.selectAll("body").select("#bondsMinus")
                 cashValue ++;
                 bondsValue--; 
             };               
-            if (reportStatus) listValues();    
+            if (reportStatus) listValues();   
+                    data = [
+  {asset: "Cash", amount: cashValue},
+  {asset: "REIT (Real Estate Investment Trust)", amount: reitValue},
+  {asset: "Bonds", amount: bondsValue},
+  {asset: "Smart Fund (Smart Robo Investments)", amount: fundValue},
+  {asset: "My Stocks (Personal Selections)", amount: selfValue}
+];
+
+if (reportStatus) console.log(data);  
+makefigure();      
 });
 
 
@@ -275,7 +325,17 @@ d3.selectAll("body").select("#fundMinus")
                 cashValue ++;
                 fundValue--; 
             };               
-            if (reportStatus) listValues();    
+            if (reportStatus) listValues();  
+                    data = [
+  {asset: "Cash", amount: cashValue},
+  {asset: "REIT (Real Estate Investment Trust)", amount: reitValue},
+  {asset: "Bonds", amount: bondsValue},
+  {asset: "Smart Fund (Smart Robo Investments)", amount: fundValue},
+  {asset: "My Stocks (Personal Selections)", amount: selfValue}
+];
+
+if (reportStatus) console.log(data);  
+makefigure();       
 });
 
 
@@ -287,7 +347,17 @@ d3.selectAll("body").select("#selfMinus")
                 cashValue ++;
                 selfValue--; 
             };               
-            if (reportStatus) listValues();    
+            if (reportStatus) listValues();   
+                    data = [
+  {asset: "Cash", amount: cashValue},
+  {asset: "REIT (Real Estate Investment Trust)", amount: reitValue},
+  {asset: "Bonds", amount: bondsValue},
+  {asset: "Smart Fund (Smart Robo Investments)", amount: fundValue},
+  {asset: "My Stocks (Personal Selections)", amount: selfValue}
+];
+
+if (reportStatus) console.log(data);  
+makefigure();      
 });
 
 
