@@ -25,6 +25,8 @@ var svg = d3.select("#barchart").append("svg")
           "translate(" + margin.left + "," + margin.top + ")");
 
 // set the investment objective for this illustration
+// the actual app will have a survey that determines 
+// the initial investment objective
 var objective = "Capital Preservation";
 // var objective = "Total Return";
 // var objective = "Aggressive Growth";
@@ -64,6 +66,7 @@ var data = [
   svg.selectAll(".bar")
       .data(data)
     .enter().append("rect")
+       .transition().duration(200).ease(d3.easeCircleIn)
       .attr("class", "bar")
       .attr("x", function(d) { return x(d.asset); })
       .attr("width", x.bandwidth())
@@ -73,6 +76,7 @@ var data = [
 			svg.selectAll(".labels")
 			   .data(data)
 			   .enter().append("text")
+               .transition().delay(400).duration(200).ease(d3.easeCircleIn)
 			   .text(function(d) {
 			   		return d.amount;
 			   })
@@ -82,7 +86,6 @@ var data = [
 			   .attr("font-family", "sans-serif")
 			   .attr("font-size", "20px")
 			   .attr("fill", "black");
-
 
 
   // add the x Axis
@@ -105,17 +108,6 @@ var data = [
       .attr("dy", "1em")
       .style("text-anchor", "middle")
       .text("Investment Portfolio Percentage");      
-
-
-
-
-
-
-
-
-
-
-
 
 
 function wrap(text, width) {
