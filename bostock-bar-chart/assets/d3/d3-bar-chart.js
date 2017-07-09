@@ -11,6 +11,8 @@ var x = d3.scaleBand()
           .padding(0.1);
 var y = d3.scaleLinear()
           .range([height, 0]);
+
+var barPadding = 1;
           
 // append the svg object to the body of the page
 // append a 'group' element to 'svg'
@@ -22,13 +24,29 @@ var svg = d3.select("#barchart").append("svg")
     .attr("transform", 
           "translate(" + margin.left + "," + margin.top + ")");
 
+// set the investment objective for this illustration
+var objective = "Capital Preservation";
+// var objective = "Total Return";
+// var objective = "Aggressive Growth";
+// var objective = "Tactical Momentum";
+
+// set default initial values for each investment objective
+if (objective === "Capital Preservation")
+    var assetAllocation = [30, 5, 15, 40, 10];
+if (objective === "Total Return")
+    var assetAllocation = [10, 5, 35, 40, 10];
+if (objective === "Aggressive Growth")
+    var assetAllocation = [10, 15, 5, 30, 20];
+if (objective === "Tactical Momentum")
+    var assetAllocation = [10, 25, 5, 30, 30];
+    
 // initial settings of data values for capital preservation objective
 var data = [
-  {asset: "Cash", amount: 30},
-  {asset: "REIT (Real Estate Investment Trust)", amount: 5},
-  {asset: "Bonds", amount: 15},
-  {asset: "Smart Fund (Smart Robo Investments)", amount: 40},
-  {asset: "My Stocks (Personal Selections)", amount: 10}
+  {asset: "Cash", amount: assetAllocation[0]},
+  {asset: "REIT (Real Estate Investment Trust)", amount: assetAllocation[1]},
+  {asset: "Bonds", amount: assetAllocation[2]},
+  {asset: "Smart Fund (Smart Robo Investments)", amount: assetAllocation[3]},
+  {asset: "My Stocks (Personal Selections)", amount: assetAllocation[4]}
 ];
 
   // Scale the range of the data in the domains
@@ -39,7 +57,7 @@ var data = [
       .attr("class", "title")
       .attr("x", x(data[0].name))
       .attr("y", -26)
-      .text("Percentage Allocation of Assets across Investment Types");
+      .text("Investment Allocation across Asset Types");
 
 
   // append the rectangles for the bar chart
@@ -52,6 +70,21 @@ var data = [
       .attr("y", function(d) { return y(d.amount); })
       .attr("height", function(d) { return height - y(d.amount); });
 
+			svg.selectAll(".labels")
+			   .data(data)
+			   .enter().append("text")
+			   .text(function(d) {
+			   		return d.amount;
+			   })
+			   .attr("text-anchor", "middle")
+               .attr("x", function(d) { return x(d.asset) + 50; })
+               .attr("y", function(d) { return y(d.amount) - 2; })               
+			   .attr("font-family", "sans-serif")
+			   .attr("font-size", "20px")
+			   .attr("fill", "black");
+
+
+
   // add the x Axis
   svg.append("g")
       .attr("transform", "translate(0," + height + ")")
@@ -62,6 +95,21 @@ var data = [
   // add the y Axis
   svg.append("g")
       .call(d3.axisLeft(y));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function wrap(text, width) {
   text.each(function() {
