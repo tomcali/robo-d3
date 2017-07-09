@@ -22,14 +22,13 @@ var svg = d3.select("#barchart").append("svg")
     .attr("transform", 
           "translate(" + margin.left + "," + margin.top + ")");
 
-// get the data
-d3.csv("sales.csv", function(error, data) {
-  if (error) throw error;
-
-  // format the data
-  data.forEach(function(d) {
-    d.sales = +d.sales;
-  });
+var data = [
+  {salesperson: "Cash", sales: 5},
+  {salesperson: "Real Estate Investment Trust (REIT)", sales: 10},
+  {salesperson: "Bonds", sales: 10},
+  {salesperson: "Smart Fund (Stocks Selected by Smart Robo Investments)", sales: 65},
+  {salesperson: "My Stocks (Personal Selections)", sales: 10}
+];
 
   // Scale the range of the data in the domains
   x.domain(data.map(function(d) { return d.salesperson; }));
@@ -63,8 +62,6 @@ d3.csv("sales.csv", function(error, data) {
   svg.append("g")
       .call(d3.axisLeft(y));
 
-});
-
 function wrap(text, width) {
   text.each(function() {
     var text = d3.select(this),
@@ -88,6 +85,13 @@ function wrap(text, width) {
     }
   });
 }
+
+function type(d) {
+  d.sales = +d.sales;
+  return d;
+}
+
+
 
 }); // end document ready function
 
